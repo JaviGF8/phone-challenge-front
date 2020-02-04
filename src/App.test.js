@@ -1,10 +1,17 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import App from './App';
 
 describe('Phone challenge', () => {
-  it('renders title', () => {
+  it('App render correctly', () => {
+    const component = shallow(<App />);
+
+    expect(component).toMatchSnapshot();
+    component.unmount();
+  });
+
+  it('render title', () => {
     const wrapper = mount(<App />);
 
     const titleElement = wrapper.find('h1.center-text');

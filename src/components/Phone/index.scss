@@ -1,0 +1,122 @@
+@import '../../styles/constants.scss';
+
+.phone {
+  margin-bottom: $size-md;
+  border-radius: $size-sm;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: linear all 0.2s;
+
+  .phone-image {
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+
+    img {
+      height: 100px;
+    }
+  }
+
+  .phone-info {
+    display: flex;
+    flex-direction: column;
+
+    .phone-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: $size-md;
+
+      p {
+        margin: 0;
+        font-weight: bold;
+      }
+
+      .phone-title {
+        color: $primary;
+        font-size: $font-lg;
+        margin-right: $size-md;
+        transition: linear color 0.2s;
+      }
+      .phone-seller {
+        padding-top: 2px;
+      }
+    }
+
+    .phone-desc {
+      margin: 0;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      display: -webkit-box;
+    }
+
+    .phone-color {
+      margin: $size-md 0 0 0;
+      font-size: $font-sm;
+      font-style: italic;
+    }
+  }
+
+  .phone-price {
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      margin: 0;
+      padding: $size-md;
+      color: white;
+      font-weight: bold;
+      background-color: $primary;
+      transition: linear background-color 0.2s;
+    }
+  }
+}
+
+.phone:hover {
+  transform: scale(1.01);
+  padding: $size-lg 0;
+  background-color: rgba($secondary-light, 0.2);
+  // -webkit-box-shadow: 0px 0px $size-sm 0px rgba(0,0,0,0.25);
+  // -moz-box-shadow: 0px 0px $size-sm 0px rgba(0,0,0,0.25);
+  // box-shadow: 0px 0px $size-sm 0px rgba(0,0,0,0.25);
+
+  .phone-info {
+    .phone-header {
+      .phone-title {
+        color: $secondary;
+      }
+    }
+  }
+
+  .phone-price {
+    p {
+      background-color: $secondary;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-md) {
+  .phone {
+    flex-direction: column;
+
+    .phone-image {
+      margin-bottom: $size-md;
+    }
+    .phone-info {
+      margin-bottom: $size-md;
+      .phone-header {
+        justify-content: center;
+      }
+
+      .phone-desc {
+        -webkit-line-clamp: 4;
+      }
+    }
+  }
+}

@@ -15,10 +15,10 @@
     min-width: 150px;
     display: flex;
     justify-content: center;
-    margin-bottom: $size-md;
+    margin-bottom: $size-lg;
 
     img {
-      height: 100px;
+      height: 50vh;
     }
   }
 
@@ -31,7 +31,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       margin-bottom: $size-md;
 
       p {

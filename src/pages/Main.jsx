@@ -11,7 +11,7 @@ const Main = () => (
       <h1 className="center-text">Phone Challenge</h1>
       <Switch>
         <Route exact component={PhoneInfoPage} path="/phone" />
-        <Route component={PhonesPage} />
+        <Route component={PhonesPage} path="" />
       </Switch>
     </div>
   </main>

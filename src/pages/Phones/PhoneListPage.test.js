@@ -1,14 +1,15 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount, shallow, render } from 'enzyme';
+import { BrowserRouter as Router } from 'react-router-dom';
 import jest from 'jest-mock';
 
 import PhoneListPage from './PhoneListPage';
 
-const changeFn = jest.fn();
+const defaultFn = jest.fn();
 
 const props = {
-  getAllPhones: changeFn,
-  setPhone: changeFn,
+  getAllPhones: defaultFn,
+  setPhone: defaultFn,
   phones: [],
 };
 
@@ -78,6 +79,17 @@ describe('Phone extended component', () => {
     const element = wrapper.find('.phone-list');
     expect(element).toHaveLength(1);
     wrapper.unmount();
+  });
+
+  it('render two phones', () => {
+    const wrapper = render(
+      <Router>
+        <PhoneListPage {...props} phones={phones} />
+      </Router>,
+    );
+
+    const element = wrapper.find('.phone-list > .phone');
+    expect(element).toHaveLength(2);
   });
 
   it('render no phones', () => {

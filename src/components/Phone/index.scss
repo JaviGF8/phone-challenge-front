@@ -4,6 +4,7 @@
   margin-bottom: $size-md;
   border-radius: $size-sm;
   background-color: transparent;
+  padding: $size-lg 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -80,7 +81,6 @@
 
 .phone:hover {
   transform: scale(1.01);
-  padding: $size-lg 0;
   background-color: rgba($secondary-light, 0.2);
   // -webkit-box-shadow: 0px 0px $size-sm 0px rgba(0,0,0,0.25);
   // -moz-box-shadow: 0px 0px $size-sm 0px rgba(0,0,0,0.25);

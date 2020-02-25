@@ -13,7 +13,6 @@ const PhoneDetail = ({ phone, setPhone }) => (
         <p className="phone-seller">({phone.seller})</p>
       </div>
       <p className="phone-desc">{phone.description}</p>
-      <p className="phone-color">Color: {phone.color}</p>
     </div>
     <div className="phone-price">
       <p>{phone.price}</p>

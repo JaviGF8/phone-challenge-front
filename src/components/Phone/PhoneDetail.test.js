@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import jest from 'jest-mock';
 
-import PhoneExtended from './PhoneExtended';
+import PhoneDetail from './PhoneDetail';
 
 const phone = {
   id: '1',
@@ -15,34 +16,27 @@ const phone = {
   seller: 'Apple',
 };
 
+const defaultFn = jest.fn();
+
 describe('Phone extended component', () => {
-  it('PhoneExtended render correctly', () => {
-    const wrapper = shallow(<PhoneExtended />);
+  it('PhoneDetail render correctly', () => {
+    const wrapper = shallow(<PhoneDetail setPhone={defaultFn} />);
 
     expect(wrapper).toMatchSnapshot();
     wrapper.unmount();
   });
 
-  it('doesnt render parent', () => {
-    const wrapper = shallow(<PhoneExtended />);
-
-    const element = wrapper.find('div.phone-extended');
-    expect(element).toEqual({});
-
-    wrapper.unmount();
-  });
-
   it('render parent', () => {
-    const wrapper = shallow(<PhoneExtended phone={phone} />);
+    const wrapper = shallow(<PhoneDetail setPhone={defaultFn} phone={phone} />);
 
-    const element = wrapper.find('div.phone-extended');
+    const element = wrapper.find('.phone');
     expect(element).toHaveLength(1);
 
     wrapper.unmount();
   });
 
   it('render image', () => {
-    const wrapper = shallow(<PhoneExtended phone={phone} />);
+    const wrapper = shallow(<PhoneDetail setPhone={defaultFn} phone={phone} />);
 
     const element = wrapper.find('.phone-image');
     expect(element).toHaveLength(1);
@@ -51,7 +45,7 @@ describe('Phone extended component', () => {
   });
 
   it('render title', () => {
-    const wrapper = shallow(<PhoneExtended phone={phone} />);
+    const wrapper = shallow(<PhoneDetail setPhone={defaultFn} phone={phone} />);
 
     const element = wrapper.find('.phone-title');
     expect(element).toHaveLength(1);
@@ -61,7 +55,7 @@ describe('Phone extended component', () => {
   });
 
   it('render seller', () => {
-    const wrapper = shallow(<PhoneExtended phone={phone} />);
+    const wrapper = shallow(<PhoneDetail setPhone={defaultFn} phone={phone} />);
 
     const element = wrapper.find('.phone-seller');
     expect(element).toHaveLength(1);
@@ -71,21 +65,11 @@ describe('Phone extended component', () => {
   });
 
   it('render desc', () => {
-    const wrapper = shallow(<PhoneExtended phone={phone} />);
+    const wrapper = shallow(<PhoneDetail setPhone={defaultFn} phone={phone} />);
 
     const element = wrapper.find('.phone-desc');
     expect(element).toHaveLength(1);
     expect(element.text()).toEqual(phone.description);
-
-    wrapper.unmount();
-  });
-
-  it('render color', () => {
-    const wrapper = shallow(<PhoneExtended phone={phone} />);
-
-    const element = wrapper.find('.phone-color');
-    expect(element).toHaveLength(1);
-    expect(element.text()).toEqual(`Color: ${phone.color}`);
 
     wrapper.unmount();
   });

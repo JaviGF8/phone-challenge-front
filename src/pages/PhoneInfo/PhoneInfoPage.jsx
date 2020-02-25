@@ -21,7 +21,13 @@ const PhoneInfoPage = ({ getAllPhones, getPhoneData, loading, phone }) => {
       {loading ? (
         <Loading />
       ) : (
-        <>{phone && phone.id ? <PhoneExtended key={phone.id} phone={phone} /> : <div>No phone found</div>}</>
+        <>
+          {phone && phone.id ? (
+            <PhoneExtended key={phone.id} phone={phone} />
+          ) : (
+            <div className="no-phone">No phone found</div>
+          )}
+        </>
       )}
       <Link to="/">Back</Link>
     </div>

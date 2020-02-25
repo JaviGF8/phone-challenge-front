@@ -16,6 +16,7 @@ describe('Phone challenge', () => {
 
     const titleElement = wrapper.find('h1.center-text');
     expect(titleElement).toHaveLength(1);
+    expect(titleElement.text()).toEqual('Phone Challenge');
 
     wrapper.unmount();
   });

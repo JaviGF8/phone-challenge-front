@@ -24,7 +24,7 @@
     animation: spin 0.8s linear infinite;
   }
 
-  .loader2 {
+  .loader-second {
     width: 60px;
     height: 60px;
     border-right: 2px solid rgba($primary-light, 0.8);
@@ -33,7 +33,7 @@
     animation: spin-two 0.95s linear infinite;
   }
 
-  .loader3 {
+  .loader-third {
     width: 40px;
     height: 40px;
     border-left: 1px solid rgba($primary, 0.5);
@@ -57,12 +57,12 @@
     border-top: 80px solid $primary;
     border-right: 40px solid transparent;
   }
-  .loader2 {
+  .loader-second {
     border-top: 30px solid transparent;
     border-right: 60px solid rgba($primary-light, 0.8);
     border-bottom: 30px solid transparent;
   }
-  .loader3 {
+  .loader-third {
     border-top: 20px solid transparent;
     border-left: 40px solid rgba($primary, 0.5);
     border-bottom: 20px solid transparent;
